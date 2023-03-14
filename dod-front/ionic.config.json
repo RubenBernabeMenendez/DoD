@@ -1,0 +1,7 @@
+{
+  "name": "dod-front",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
