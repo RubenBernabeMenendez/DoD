@@ -1,5 +1,5 @@
 {
-  "name": "dod-front",
+  "name": "bom",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -15,7 +15,7 @@
   "private": true,
   "dependencies": {
     "@angular-devkit/architect": "^0.1300.4",
-    "@angular/animations": "^13.0.3",
+    "@angular/animations": "~12.1.1",
     "@angular/cdk": "~12.2.13",
     "@angular/common": "~12.1.1",
     "@angular/core": "~12.1.1",
@@ -27,6 +27,8 @@
     "@ionic-native/camera": "^5.36.0",
     "@ionic-native/core": "^5.36.0",
     "@ionic-native/file": "^5.36.0",
+    "@ionic-native/sqlite": "^5.36.0",
+    "@ionic-native/sqlite-porter": "^5.36.0",
     "@ionic/angular": "^5.5.2",
     "cordova-android": "9.1.0",
     "rxjs": "~6.6.0",
@@ -80,6 +82,8 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
+      "cordova-sqlite-storage": {},
+      "uk.co.workingedge.cordova.plugin.sqliteporter": {},
       "cordova-plugin-whitelist": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},
