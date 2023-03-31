@@ -1,0 +1,20 @@
+<div class="header-container">
+  <h2>Minijuegos</h2>
+</div>
+<div class="type-game-menu-container">
+
+  <mat-card class="type-game-item-container" *ngFor="let minigame of minigames">
+    <div fxFlex fxFlexAlign="center">
+      <div fxLayout="row">
+        {{minigame}}
+      </div>
+      <div fxLayout="row">
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star_half</mat-icon>
+      </div>
+    </div>
+  </mat-card>
+
+</div>

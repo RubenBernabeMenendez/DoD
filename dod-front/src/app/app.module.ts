@@ -15,11 +15,13 @@ import { Camera } from '@ionic-native/camera/ngx';
 import { File } from '@ionic-native/file/ngx';
 import {MainMenuComponent} from "./views/main-menu/main-menu.component";
 import {TypeGameMenuComponent} from "./views/type-game-menu/type-game-menu.component";
+import {MinigamesMenuComponent} from "./views/minigames-menu/minigames-menu.component";
 
 
 export const viewComponents = [
   MainMenuComponent,
-  TypeGameMenuComponent
+  TypeGameMenuComponent,
+  MinigamesMenuComponent
 ];
 
 @NgModule({

@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TypeGameMenuComponent implements OnInit {
 
+  public typeGames = [
+    {name: 'Minijuegos', url: '/minigames-menu'},
+    {name: 'Partida de mundos', url: '/minigames-menu'},
+    {name: 'Personalizar partida', url: '/minigames-menu'},
+  ];
+
   constructor() { }
 
   ngOnInit() {}

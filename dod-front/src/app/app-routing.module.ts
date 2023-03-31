@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {MainMenuComponent} from "./views/main-menu/main-menu.component";
 import {TypeGameMenuComponent} from "./views/type-game-menu/type-game-menu.component";
+import {MinigamesMenuComponent} from "./views/minigames-menu/minigames-menu.component";
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'type-game-menu',
     component: TypeGameMenuComponent
+  },
+  {
+    path: 'minigames-menu',
+    component: MinigamesMenuComponent
   }
 ];
 

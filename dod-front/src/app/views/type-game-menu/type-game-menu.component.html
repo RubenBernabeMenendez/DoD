@@ -1,3 +1,17 @@
+<div class="header-container">
+  <h2>Tipo de partida</h2>
+</div>
 <div class="type-game-menu-container">
+
+  <div *ngFor="let typeGame of typeGames">
+    <mat-card class="type-game-item-container" [routerLink]="typeGame.url">
+      <div fxFlex fxFlexAlign="center">
+        <div fxLayout="row">
+          {{typeGame.name}}
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
 
 </div>

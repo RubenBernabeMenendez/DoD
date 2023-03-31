@@ -1,5 +1,14 @@
 @import 'src/assets/styles/colors.scss';
 
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5%;
+  min-height: 7vh;
+  background-color: $color-secondary;
+}
+
 .main-menu-container {
   display: flex;
   flex-direction: column;
@@ -58,11 +67,18 @@
   }
 }
 
-
 .type-game-menu-container {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   background-color: $color-principal;
+  padding: 3%;
+
+  .type-game-item-container {
+    display: flex;
+    justify-content: center;
+    margin: 3%;
+    background-color: $color-orange;
+  }
 }
