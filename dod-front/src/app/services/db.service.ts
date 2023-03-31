@@ -3,7 +3,8 @@ import {SQLite} from '@ionic-native/sqlite/ngx';
 import {Platform} from '@ionic/angular';
 import {SQLiteObject} from '@ionic-native/sqlite';
 import {SQLitePorter} from '@ionic-native/sqlite-porter/ngx';
-import {BBDDOptions} from "../model/util/BBDDOptions";
+import {BBDDOptions} from "src/app/model/util/BBDDOptions";
+import {environment} from "src/environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -41,25 +42,27 @@ export class DbService {
 
   // Create SQLite database
   databaseConn() {
-    this.platform.ready().then(() => {
-      this.sqlite.create({
-        name: this.dbName,
-        location: 'default'
-      }).then((sqLite: SQLiteObject) => {
-        this.dbInstance = sqLite;
-        for (const item of this.tablesCreate) {
-          sqLite.executeSql(item, [])
-            .then((scs: any) => {
-            }).catch((error) => alert(JSON.stringify(error)));
-        }
-        for (const item of this.inserts) {
-          sqLite.executeSql(item, [])
-            .then((scs: any) => {
-            }).catch((error) => alert(JSON.stringify(error)));
-        }
-      })
-        .catch((error) => alert(JSON.stringify(error)));
-    });
+    if (!environment.bbddMocked) {
+      this.platform.ready().then(() => {
+        this.sqlite.create({
+          name: this.dbName,
+          location: 'default'
+        }).then((sqLite: SQLiteObject) => {
+          this.dbInstance = sqLite;
+          for (const item of this.tablesCreate) {
+            sqLite.executeSql(item, [])
+              .then((scs: any) => {
+              }).catch((error) => alert(JSON.stringify(error)));
+          }
+          for (const item of this.inserts) {
+            sqLite.executeSql(item, [])
+              .then((scs: any) => {
+              }).catch((error) => alert(JSON.stringify(error)));
+          }
+        })
+          .catch((error) => alert(JSON.stringify(error)));
+      });
+    }
   }
 
   public selectItem(bbddOptions: BBDDOptions): Promise<any> {

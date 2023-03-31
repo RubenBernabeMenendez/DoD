@@ -13,10 +13,20 @@ import { SQLite } from '@ionic-native/sqlite/ngx';
 import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
 import { File } from '@ionic-native/file/ngx';
+import {MainMenuComponent} from "./views/main-menu/main-menu.component";
+import {TypeGameMenuComponent} from "./views/type-game-menu/type-game-menu.component";
+
+
+export const viewComponents = [
+  MainMenuComponent,
+  TypeGameMenuComponent
+];
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,
+    ...viewComponents],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularMaterialModule, HttpClientModule],
+  exports: [AngularMaterialModule],
   providers: [SQLite, SQLitePorter, Camera, File, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
