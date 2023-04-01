@@ -1,4 +1,4 @@
-package com.dod.DodData.model;
+package com.dod.DodData.model.User;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,7 +21,7 @@ public class User implements Serializable {
 
     @Id
     @Column(name = "USER_ID")
-    private String userId;
+    private Long userId;
 
     @Column(name = "NAME")
     private String name;
